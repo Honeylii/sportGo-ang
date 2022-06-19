@@ -4,7 +4,25 @@
     <p>Please fill in this form to create an account.</p>
     <hr />
 
-    <label for="username"><b>Email</b></label>
+    <label for="firstName"><b>First Name</b></label>
+    <input
+      type="text"
+      placeholder="First Name"
+      name="firstName"
+      id="firstName"
+      ngModel
+      required
+    />
+    <label for="lastName"><b>Last Name</b></label>
+    <input
+      type="text"
+      placeholder="Last Name"
+      name="lastName"
+      id="lastName"
+      ngModel
+      required
+    />
+    <label for="username"><b>User Name </b></label>
     <input
       type="text"
       placeholder="username"
@@ -22,7 +40,13 @@
       id="email"
       ngModel
       required
+      email
+      #email="ngModel"
     />
+    <span class="help-block" *ngIf="!email.valid && email.touched"
+      >Please Enter a valid email!</span
+    >
+    <hr />
 
     <label for="psw"><b>Password</b></label>
     <input
@@ -43,12 +67,65 @@
       ngModel
       required
     />
+
+    <label for="currentSalary"><b>Current Salary</b></label>
+    <input
+      type="text"
+      placeholder="Current Salary"
+      name="currentSalary"
+      id="currentSalary"
+      ngModel
+      required
+    />
+
+    <label for="dob"><b> Date Of Birth </b></label>
+    <input
+      type="text"
+      placeholder="Data Of Birth"
+      name="dob"
+      id="dob"
+      ngModel
+      required
+    />
+
+    <label for="currentSalary"><b>Sport</b></label>
+    <select
+      type="text"
+      placeholder="Sport"
+      name="sport"
+      id="sport"
+      ngModel
+      required
+    >
+      <option value=""> Choose One</option>
+      <option value="Volleyball">Volleyball</option>
+      <option value="Basketball">Basketball</option>
+      <option value="Soccer">Soccer</option>
+    </select>
+
+    <hr />
+    <label for="userType"><b>User Type</b></label>
+    <select
+      type="text"
+      placeholder="userType"
+      name="userType"
+      id="userType"
+      ngModel
+      required
+    >
+      <option value=""> Choose One</option>
+      <option value="Player">Player</option>
+      <option value="Coach">Coach</option>
+      <option value="Team">Team</option>
+    </select>
     <hr />
 
     <p>
       By creating an account you agree to our <a href="#">Terms & Privacy</a>.
     </p>
-    <button type="submit" class="registerbtn">Register</button>
+    <button [disabled]="!f.valid" type="submit" class="btn btn-success">
+      Register
+    </button>
   </div>
 
   <div class="container signin">

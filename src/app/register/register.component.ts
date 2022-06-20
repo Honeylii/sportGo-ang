@@ -4,10 +4,12 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
   @ViewChild('f') signupForm: NgForm;
+  defaultSport = 'Choose';
+  genders = ['Male', 'Female'];
 
   constructor() {}
 

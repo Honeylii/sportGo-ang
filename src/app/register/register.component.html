@@ -32,6 +32,8 @@
       required
     />
 
+    <hr />
+
     <label for="email"><b>Email</b></label>
     <input
       type="text"
@@ -87,24 +89,31 @@
       ngModel
       required
     />
-
-    <label for="currentSalary"><b>Sport</b></label>
+    <label for="genders"><b>Gender </b> </label>
+    <div class="radio" *ngFor="let gender of genders">
+      <label>
+        <input type="radio" name="gender" ngModel [value]="gender" required />
+      </label>
+      {{ gender }}
+    </div>
+    <hr />
+    <label for="currentSalary"><b>Sport </b></label>
     <select
       type="text"
       placeholder="Sport"
       name="sport"
       id="sport"
-      ngModel
+      [ngModel]="defaultSport"
       required
     >
-      <option value=""> Choose One</option>
+      <option value="Choose">Choose One</option>
       <option value="Volleyball">Volleyball</option>
       <option value="Basketball">Basketball</option>
       <option value="Soccer">Soccer</option>
     </select>
 
     <hr />
-    <label for="userType"><b>User Type</b></label>
+    <label for="userType"><b>User Type </b></label>
     <select
       type="text"
       placeholder="userType"
@@ -113,7 +122,7 @@
       ngModel
       required
     >
-      <option value=""> Choose One</option>
+      <option value="">Choose One</option>
       <option value="Player">Player</option>
       <option value="Coach">Coach</option>
       <option value="Team">Team</option>

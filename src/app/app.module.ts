@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './Auth/login/login.component';
+import { RegisterComponent } from './Auth/register/register.component';
 import { HomeComponent } from './home/home.component';
-import { PlayerProfileComponent } from './player-profile/player-profile.component';
-import { TeamProfileComponent } from './team-profile/team-profile.component';
+import { PlayerProfileComponent } from './Player/player-profile/player-profile.component';
+import { TeamProfileComponent } from './Team/team-profile/team-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +16,10 @@ import { TeamProfileComponent } from './team-profile/team-profile.component';
     RegisterComponent,
     HomeComponent,
     PlayerProfileComponent,
-    TeamProfileComponent
+    TeamProfileComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent, RegisterComponent]
+  bootstrap: [AppComponent, RegisterComponent],
 })
 export class AppModule {}

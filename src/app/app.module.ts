@@ -8,6 +8,8 @@ import { RegisterComponent } from './Auth/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { PlayerProfileComponent } from './Player/player-profile/player-profile.component';
 import { TeamProfileComponent } from './Team/team-profile/team-profile.component';
+import { MobxAngularModule } from 'mobx-angular';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { TeamProfileComponent } from './Team/team-profile/team-profile.component
     PlayerProfileComponent,
     TeamProfileComponent,
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, MobxAngularModule, StoreModule.forRoot({}, {})],
   providers: [],
   bootstrap: [AppComponent, RegisterComponent],
 })

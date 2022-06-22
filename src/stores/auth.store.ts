@@ -1,14 +1,11 @@
 
-// export const authStore = new Auth();
-
 import {
-    observable,
-    runInAction,
+    observable, 
     action,
     autorun,
     toJS,
     makeAutoObservable,
-    makeObservable
+
   } from 'mobx';
   import { Injectable } from '@angular/core'; 
   import { HttpClient, HttpErrorResponse } from '@angular/common/http';

@@ -1,18 +1,15 @@
 
-// export const authStore = new Auth();
-
 import {
-    observable,
-    runInAction,
+    observable, 
     action,
     autorun,
     toJS,
     makeAutoObservable,
-    makeObservable
+
   } from 'mobx';
   import { Injectable } from '@angular/core'; 
   import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { IRegister } from 'src/app/models/auth.model';
+import { ILogin, IRegister } from 'src/app/models/auth.model';
 import { catchError, Observable, throwError } from "rxjs";
 import { environment } from 'src/environments/environment';
 @Injectable({
@@ -33,13 +30,24 @@ import { environment } from 'src/environments/environment';
       error: observable,
       isAuth: observable,
       users: observable,
-      userType: observable
+      userType: observable,
+      login: action,
+      signUp: action,
     });
   }
 
   signUp(data: IRegister) { 
     try {
       return this.http.post<any>(`${environment.apiUrl}/users`, data).pipe(catchError(this.handleError));
+    } catch (error) { 
+      console.log({ error });
+      throw error;
+    }
+  };
+
+  login(data: ILogin) { 
+    try {
+      return this.http.post<any>(`${environment.apiUrl}/users/auth`, data).pipe(catchError(this.handleError));
     } catch (error) { 
       console.log({ error });
       throw error;

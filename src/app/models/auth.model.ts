@@ -12,3 +12,7 @@ export interface IRegister {
     Coach = 'Coach',
     Admin = 'Admin',
   }
+  export interface ILogin { 
+    email: string; 
+    password: string; 
+  }

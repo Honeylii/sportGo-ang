@@ -1,2 +1,7 @@
 <p>test-state works!</p>
 {{ store.message }}
+<div *mobxAutorun>
+    This is to test form saving
+</div>
+<button (click)="save()">Save</button>
+    {{ message }}

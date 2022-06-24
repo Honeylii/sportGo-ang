@@ -12,6 +12,7 @@ import { MobxAngularModule } from 'mobx-angular';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TestStateComponent } from './Auth/test-state/test-state.component';
+import { TeamprofileComponent } from './teamprofile/teamprofile.component';
 import { Auth } from 'src/stores/auth.store';
 
 @NgModule({
@@ -22,10 +23,17 @@ import { Auth } from 'src/stores/auth.store';
     HomeComponent,
     PlayerProfileComponent,
     TeamProfileComponent,
-    PageNotFoundComponent, 
+    PageNotFoundComponent,
     TestStateComponent,
+    TeamprofileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, MobxAngularModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    MobxAngularModule,
+  ],
   providers: [Auth],
   bootstrap: [AppComponent, RegisterComponent],
 })
